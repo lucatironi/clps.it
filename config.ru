@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'vendor/sinatra/lib/sinatra.rb'
+require 'sinatra'
 
 require 'shorter_app.rb'
 
