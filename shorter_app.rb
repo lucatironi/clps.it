@@ -1,6 +1,5 @@
 require 'rubygems'
-require 'sinatra'
-require 'yaml'
+require 'vendor/sinatra/lib/sinatra.rb'
 require 'sass'
 require 'haml'
 require 'helpers/link'
