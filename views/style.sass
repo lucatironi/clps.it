@@ -1,0 +1,334 @@
+@import constants.sass
+
+body
+  font-family: $normal_fonts
+  color: $font_color
+  background: $body_background_color
+
+h1, h2, h3, h4, h5, h6
+  font-family: $headline_fonts
+  color: $headline_color
+  font-weight: bold
+
+a
+  color : $link_color
+  text-decoration: none
+  outline: 0
+  &:visited
+    color: $link_color
+  &:hover
+    color: $link_hover_color
+    text-decoration: underline
+  &:active
+    color: $link_active_color
+    background: $link_hover_color
+    text-decoration: none
+  &.cancel
+    color: red
+  &.cancel:active
+    color: $link_active_color
+    background: red
+
+blockquote
+  border-left: 4px solid #ddd
+
+small
+  color: $weak_color
+
+#header_wrap
+  background: $header_background_color
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0.01, rgb(187, 187, 187)), color-stop(0.02, rgb(204, 204, 204)), color-stop(0.98, rgb(238, 238, 238)), color-stop(0.99, rgb(255, 255, 255)))
+  background: -moz-linear-gradient(center bottom, rgb(187, 187, 187) 1%, rgb(204, 204, 204) 2%, rgb(238, 238, 238) 98%, rgb(255, 255, 255) 99%)
+
+  header
+    #logo h1
+      margin-bottom: 0
+      line-height: 1.5
+      text-shadow: 1px 1px 0px #fff
+      a
+        color: #666
+        &:visited
+          color: #666
+        &:hover
+          color: $link_color
+          text-decoration: none
+        &:active
+          color: $link_hover_color
+          background: none
+      .alt
+        font-weight: normal
+        color: #888
+  nav#main_navigation ul
+    margin: 0
+    padding: 0
+    line-height: 4.5
+    list-style: none
+    li
+      float: right
+      margin-right: 12px
+      a
+        color: #666
+        font-weight: bold
+        text-shadow: 1px 1px 0px #fff
+        &:visited
+          color: #666
+          font-weight: bold
+          text-shadow: 1px 1px 0px #fff
+        &:hover
+          color: $link_color
+          text-decoration: none
+        &:active
+          color: $link_hover_color
+          background: none
+        &.current
+          border-bottom: 3px solid #0af
+body#idea a#idea_page,
+body#project a#project_page,
+body#product a#product_page
+  border-bottom: 3px solid #0af
+
+#flash_box
+  :left 0
+  :padding 1em 0
+  :position absolute
+  :width 100%
+  :z-index 100
+  :opacity 0.8
+  :background-color #FCFCFF
+  :border-bottom 1px solid #CCCCCC
+  :cursor pointer
+  #flash
+    :font-weight bold
+    :text-align center
+  #flash.success
+    :color #264409
+  #flash.notice
+    :color #514721
+  #flash.error
+    :color #8A1F11
+
+#content
+  margin-top: 1.5em
+  -webkit-box-shadow: 0px 0px 4px #ddd
+  -moz-box-shadow: 0px 0px 4px #ddd
+  box-shadow: 0px 0px 4px #ddd
+
+  nav#content_navigation
+    overflow: auto
+    background: $navbar_background_color
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.01, rgb(187, 187, 187)), color-stop(0.02, rgb(204, 204, 204)), color-stop(0.98, rgb(238, 238, 238)), color-stop(0.99, rgb(255, 255, 255)))
+    background: -moz-linear-gradient(center bottom, rgb(187, 187, 187) 1%, rgb(204, 204, 204) 2%, rgb(238, 238, 238) 98%, rgb(255, 255, 255) 99%)
+    border: 1px solid #bbb
+    border-bottom: 0
+    -webkit-border-top-left-radius: 6px
+    -webkit-border-top-right-radius: 6px
+    -moz-border-radius-topleft: 6px
+    -moz-border-radius-topright: 6px
+    border-top-left-radius: 6px
+    border-top-right-radius: 6px
+    ul
+      margin: 0
+      padding-left: 12px
+      line-height: 3
+      list-style: none
+      li
+        float: left
+        margin-right: 6px
+        padding: 0 12px
+        &.current
+          line-height: 2.5
+          margin-top: 6px
+          background: #fff
+          border: 1px solid #bbb
+          border-bottom: 0
+          -webkit-border-top-left-radius: 6px
+          -webkit-border-top-right-radius: 6px
+          -moz-border-radius-topleft: 6px
+          -moz-border-radius-topright: 6px
+          border-top-left-radius: 6px
+          border-top-right-radius: 6px
+        a
+          color: #666
+          font-weight: bold
+          text-shadow: 1px 1px 0px #fff
+          &:visited
+            color: #666
+            font-weight: bold
+            text-shadow: 1px 1px 0px #fff
+          &:hover
+            color: $link_color
+            text-decoration: none
+          &:active
+            color: $link_hover_color
+            background: none
+    form
+      text-align: right
+      padding-right: 12px
+      input[type=text]
+        border: 0
+        padding: 3px
+
+  #main_content
+    min-height: 450px
+    padding-top: 1.5em
+    background: $content_background_color
+    border: 1px solid #bbb
+    border-top: 0
+    -webkit-border-bottom-left-radius: 6px
+    -webkit-border-bottom-right-radius: 6px
+    -moz-border-radius-bottomleft: 6px
+    -moz-border-radius-bottomright: 6px
+    border-bottom-left-radius: 6px
+    border-bottom-right-radius: 6px
+    h3, h4, h5, h6, p
+      padding: 0 12px
+    ul, ol
+      padding-left: 52px
+    table
+      width: 97.5%
+      margin: 0 12px 1.5em
+      border: 1px solid #ccc
+      -webkit-border-top-left-radius: 6px
+      -webkit-border-top-right-radius: 6px
+      -moz-border-radius-topleft: 6px
+      -moz-border-radius-topright: 6px
+      border-top-left-radius: 6px
+      border-top-right-radius: 6px
+      color: #888
+      thead tr th
+        vertical-align: top
+        background: #eee
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(0.01, rgb(221, 221, 221)), color-stop(0.99, rgb(238, 238, 238)), color-stop(1, rgb(255, 255, 255)))
+        background: -moz-linear-gradient(center bottom, rgb(221, 221, 221) 1%, rgb(238, 238, 238) 99%, rgb(255, 255, 255) 100%)
+        border-bottom: 1px solid #ccc
+        font-weight: bold
+        text-shadow: 1px 1px 0px #fff
+      tbody tr.even td
+        background: #f2f2f2
+      tbody tr.total
+        td
+          border-top: 1px solid #ccc
+        td.first
+          font-weight: bold
+          text-align: right
+      tfoot tr th
+        text-align: right
+        font-style: normal
+        background: #efefef
+        border-top: 1px solid #ccc
+    table.overview
+      margin-bottom: 3em
+    p.timespan_selection
+      float: right
+      a.selected
+        color: $font_color
+    form 
+      label
+        line-height: 3
+      fieldset
+        margin:
+          left: 12px
+          right: 12px
+#footer_wrap
+  margin-top: 1.5em
+
+  footer p
+    padding: 0 12px
+    text-align: center
+    color: #aaa
+    font-size: 0.75em
+    font-weight: bold
+    text-shadow: 1px 1px 0px #fff
+    a:active
+      text-shadow: none
+
+.alignright
+  text-align: right
+.aligncenter
+  text-align: center
+
+// PAGINATION
+
+.pagination
+  padding: 0 12px
+  text-align: right
+  a, a:hover, a:active, .current, .disabled
+    margin: 0 0.2em
+    padding: 0.2em 0.5em
+    border: 1px solid #d1d1cf
+    text-decoration: none
+  .current
+    font-weight: bold
+    background-color: #d1d1cf
+    color: #fff
+  .disabled
+    border: 1px solid #aaa
+    color: #aaa
+
+// ERROR MESSAGES
+
+.fieldWithErrors
+  display: inline
+  background: #FFF6BF
+  color: #514721
+#errorExplanation
+  margin: 0 12px 1.5em
+  border: 1px solid #FFD324
+  h2
+    padding: 0.5em 12px
+    text-align: left
+    color: #fff
+    font-size: 1.2em
+    color: #514721
+    background-color: #FFF6BF
+  p
+    margin: 0
+    padding: 1em 1em 0
+  ul
+    margin: 0
+    padding: 0.5em 0 1em 1em
+    border-bottom: 2px solid #FFF6BF
+
+a.fancy_button
+  padding: 4px 16px
+  background: #eee
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0.1, rgb(221, 221, 221)), color-stop(0.5, rgb(238, 238, 238)))
+  background: -moz-linear-gradient(center bottom, rgb(221, 221, 221) 10%, rgb(238, 238, 238) 50%)
+  border: 1px solid #bbb
+  -webkit-border-radius: 16px
+  -moz-border-radius: 16px
+  border-radius: 16px
+  -webkit-box-shadow: 0px 0px 3px #ddd
+  -moz-box-shadow: 0px 0px 3px #ddd
+  box-shadow: 0px 0px 3px #ddd
+  font-weight: bold
+  text-decoration: none
+  color: #444
+  text-shadow: 1px 1px 0px #fff
+  &:visited
+    padding: 4px 16px
+    background: #eee
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.1, rgb(221, 221, 221)), color-stop(0.5, rgb(238, 238, 238)))
+    background: -moz-linear-gradient(center bottom, rgb(221, 221, 221) 10%, rgb(238, 238, 238) 50%)
+    border: 1px solid #bbb
+    -webkit-border-radius: 16px
+    -moz-border-radius: 16px
+    border-radius: 16px
+    -webkit-box-shadow: 0px 0px 3px #ddd
+    -moz-box-shadow: 0px 0px 3px #ddd
+    box-shadow: 0px 0px 3px #ddd
+    font-weight: bold
+    text-decoration: none
+    color: #444
+    text-shadow: 1px 1px 0px #fff
+  &:hover
+    color: $link_color
+    text-decoration: none
+  &:active
+    color: $link_hover_color
+    background: #ddd
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.5, rgb(238, 238, 238)), color-stop(1, rgb(221, 221, 221)))
+    background: -moz-linear-gradient(center bottom, rgb(238, 238, 238) 50%, rgb(221, 221, 221) 100%)
+  img
+    vertical-align: bottom
+    margin-right: 8px
