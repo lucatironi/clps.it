@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require 'haml'
+require 'vendor/haml/lib/haml.rb'
 require 'helpers/link'
 
 set :sass, {:style => :compact }
