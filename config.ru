@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 
-require 'shorter_app.rb'
+require 'clpsit_app.rb'
 
 root_dir = File.dirname(__FILE__)
 

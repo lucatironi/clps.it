@@ -37,8 +37,6 @@ small
 
 #header_wrap
   background: $header_background_color
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0.01, rgb(187, 187, 187)), color-stop(0.02, rgb(204, 204, 204)), color-stop(0.98, rgb(238, 238, 238)), color-stop(0.99, rgb(255, 255, 255)))
-  background: -moz-linear-gradient(center bottom, rgb(187, 187, 187) 1%, rgb(204, 204, 204) 2%, rgb(238, 238, 238) 98%, rgb(255, 255, 255) 99%)
 
   header
     #logo h1
@@ -82,10 +80,6 @@ small
           background: none
         &.current
           border-bottom: 3px solid #0af
-body#idea a#idea_page,
-body#project a#project_page,
-body#product a#product_page
-  border-bottom: 3px solid #0af
 
 #flash_box
   :left 0
@@ -112,123 +106,18 @@ body#product a#product_page
   -webkit-box-shadow: 0px 0px 4px #ddd
   -moz-box-shadow: 0px 0px 4px #ddd
   box-shadow: 0px 0px 4px #ddd
+  min-height: 450px
+  padding-top: 1.5em
+  background: $content_background_color
+  border: 1px solid #bbb
+  -webkit-border-radius: 6px
+  -moz-border-radius: 6px
+  border-radius: 6px
+  h3, h4, h5, h6, p
+    padding: 0 12px
+  ul, ol
+    padding-left: 52px
 
-  nav#content_navigation
-    overflow: auto
-    background: $navbar_background_color
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.01, rgb(187, 187, 187)), color-stop(0.02, rgb(204, 204, 204)), color-stop(0.98, rgb(238, 238, 238)), color-stop(0.99, rgb(255, 255, 255)))
-    background: -moz-linear-gradient(center bottom, rgb(187, 187, 187) 1%, rgb(204, 204, 204) 2%, rgb(238, 238, 238) 98%, rgb(255, 255, 255) 99%)
-    border: 1px solid #bbb
-    border-bottom: 0
-    -webkit-border-top-left-radius: 6px
-    -webkit-border-top-right-radius: 6px
-    -moz-border-radius-topleft: 6px
-    -moz-border-radius-topright: 6px
-    border-top-left-radius: 6px
-    border-top-right-radius: 6px
-    ul
-      margin: 0
-      padding-left: 12px
-      line-height: 3
-      list-style: none
-      li
-        float: left
-        margin-right: 6px
-        padding: 0 12px
-        &.current
-          line-height: 2.5
-          margin-top: 6px
-          background: #fff
-          border: 1px solid #bbb
-          border-bottom: 0
-          -webkit-border-top-left-radius: 6px
-          -webkit-border-top-right-radius: 6px
-          -moz-border-radius-topleft: 6px
-          -moz-border-radius-topright: 6px
-          border-top-left-radius: 6px
-          border-top-right-radius: 6px
-        a
-          color: #666
-          font-weight: bold
-          text-shadow: 1px 1px 0px #fff
-          &:visited
-            color: #666
-            font-weight: bold
-            text-shadow: 1px 1px 0px #fff
-          &:hover
-            color: $link_color
-            text-decoration: none
-          &:active
-            color: $link_hover_color
-            background: none
-    form
-      text-align: right
-      padding-right: 12px
-      input[type=text]
-        border: 0
-        padding: 3px
-
-  #main_content
-    min-height: 450px
-    padding-top: 1.5em
-    background: $content_background_color
-    border: 1px solid #bbb
-    border-top: 0
-    -webkit-border-bottom-left-radius: 6px
-    -webkit-border-bottom-right-radius: 6px
-    -moz-border-radius-bottomleft: 6px
-    -moz-border-radius-bottomright: 6px
-    border-bottom-left-radius: 6px
-    border-bottom-right-radius: 6px
-    h3, h4, h5, h6, p
-      padding: 0 12px
-    ul, ol
-      padding-left: 52px
-    table
-      width: 97.5%
-      margin: 0 12px 1.5em
-      border: 1px solid #ccc
-      -webkit-border-top-left-radius: 6px
-      -webkit-border-top-right-radius: 6px
-      -moz-border-radius-topleft: 6px
-      -moz-border-radius-topright: 6px
-      border-top-left-radius: 6px
-      border-top-right-radius: 6px
-      color: #888
-      thead tr th
-        vertical-align: top
-        background: #eee
-        background: -webkit-gradient(linear, left bottom, left top, color-stop(0.01, rgb(221, 221, 221)), color-stop(0.99, rgb(238, 238, 238)), color-stop(1, rgb(255, 255, 255)))
-        background: -moz-linear-gradient(center bottom, rgb(221, 221, 221) 1%, rgb(238, 238, 238) 99%, rgb(255, 255, 255) 100%)
-        border-bottom: 1px solid #ccc
-        font-weight: bold
-        text-shadow: 1px 1px 0px #fff
-      tbody tr.even td
-        background: #f2f2f2
-      tbody tr.total
-        td
-          border-top: 1px solid #ccc
-        td.first
-          font-weight: bold
-          text-align: right
-      tfoot tr th
-        text-align: right
-        font-style: normal
-        background: #efefef
-        border-top: 1px solid #ccc
-    table.overview
-      margin-bottom: 3em
-    p.timespan_selection
-      float: right
-      a.selected
-        color: $font_color
-    form 
-      label
-        line-height: 3
-      fieldset
-        margin:
-          left: 12px
-          right: 12px
 #footer_wrap
   margin-top: 1.5em
 
@@ -244,6 +133,8 @@ body#product a#product_page
 
 .alignright
   text-align: right
+.alignleft
+  text-align: left
 .aligncenter
   text-align: center
 

@@ -1,7 +1,7 @@
 !!! 5
 %html{html_attrs('en-us')}
   %head
-    %title Shorter
+    %title Clps.it
     %link{:rel => "stylesheet", :href => "#{link_to "/stylesheets/blueprint.css"}", :type => "text/css", :media => "screen, projection"}
     %link{:rel => "stylesheet", :href => "#{link_to "/stylesheets/style.css"}", :type => "text/css", :media => "screen, projection"}
     /[if IE]
@@ -15,14 +15,9 @@
       %header.container
         #logo
           %h1
-            %a{:href => "#{link_to "/"}"} Shorter
-    #content.container
-      %nav#content_navigation
-        %ul
-          %li
-            %a{:href => "#{link_to "/"}"} Home
-      %section#main_content
-        = yield
+            %a{:href => "#{link_to "/"}"} Clps.it
+    %section#content.container
+      = yield
     #footer_wrap
       %footer.container
         %p
