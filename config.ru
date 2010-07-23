@@ -11,8 +11,6 @@ set(:run, false)
 set(:environment, ENV['RACK_ENV'].to_sym)
 set(:raise_errors, true)
 
-disable :run
-
 log = File.new('log/sinatra.log', 'a')
 $stdout.reopen(log)
 $stderr.reopen(log)

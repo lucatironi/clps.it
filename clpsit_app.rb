@@ -7,11 +7,12 @@ require 'active_record'
 require 'digest/md5'
 
 dbconfig = YAML.load(File.read('config/database.yml'))
-ActiveRecord::Base.establish_connection dbconfig['production']
+ActiveRecord::Base.establish_connection dbconfig[ENV['RACK_ENV'].to_s]
 
 set :sass, {:style => :compact }
 
 class Url < ActiveRecord::Base
+  attr_accessible :full, :short, :md5_hash, :clicks
   before_create :generate_short_url
 
   URL_CHARS = ('0'..'9').to_a + %w(b c d f g h j k l m n p q r s t v w x y z) + %w(B C D F G H J K L M N P Q R S T V W X Y Z - _)
@@ -22,11 +23,6 @@ class Url < ActiveRecord::Base
     self.short = (0..4).map{ o[rand(o.length)]  }.join
     # Ensure uniqueness of the token..
     generate_short_url unless Url.find(:first, :conditions => {:short => self.short}).nil?
-  end
-
-  def add_click
-    self.increment(:clicks)
-    self.save
   end
 end
 
@@ -67,7 +63,7 @@ end
 get '/:short' do
   @url = Url.find(:first, :conditions => {:short => params[:short]})
   unless @url.nil?
-    @url.add_click
+    Url.update_counters(@url.id, :clicks => 1)
     redirect @url.full, 301
   else
     "There's no url with that short code!"

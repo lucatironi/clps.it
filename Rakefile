@@ -2,7 +2,7 @@ namespace :db do
   task :environment do
     require 'active_record'
     dbconfig = YAML.load(File.read('config/database.yml'))
-    ActiveRecord::Base.establish_connection dbconfig['production']
+    ActiveRecord::Base.establish_connection dbconfig[ENV['RACK_ENV'].to_s]
   end
 
   desc "Migrate the database"
