@@ -1,0 +1,5 @@
+%h3 All Url
+%ul
+  - @urls.each do |url|
+    - link = link_to "/#{url.short}", :full_url
+    %li== <a href="#{link}"}">#{link}</a> (#{url.clicks} clicks) 

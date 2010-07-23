@@ -1,4 +1,3 @@
-
 .collapser
   %form.inline{:method => "post", :action => "/collapse"}
     %input{:name =>"url[full]", :type => "text", :placeholder => "Paste your url"}
@@ -7,7 +6,7 @@
   - if params[:short]
     - link = link_to "/#{params[:short]}", :full_url
     %h3== Your Collapsed URL: <a href="#{link}"}">#{link}</a>
-    #d_clip_button Copy!
+    %button#d_clip_button Copy!
 
     :javascript
       var clip = null;

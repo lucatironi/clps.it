@@ -25,14 +25,18 @@ class Url < ActiveRecord::Base
   end
 
   def add_click
-    self.clicks = self.clicks + 1
-    save
+    self.increment(:clicks)
+    self.save
   end
 end
 
 get '/' do
-  @urls = Url.find(:all)
   haml :index
+end
+
+get '/admin' do
+  @urls = Url.find(:all)
+  haml :admin
 end
 
 post '/collapse' do
@@ -43,7 +47,7 @@ post '/collapse' do
       redirect "/?short=#{@url.short}"
     else
       @url = Url.new(params[:url])
-      @url.hash = hash
+      @url.md5_hash = md5_hash
       if @url.save
         redirect "/?short=#{@url.short}"
       else
