@@ -7,7 +7,7 @@ require 'active_record'
 require 'digest/md5'
 
 dbconfig = YAML.load(File.read('config/database.yml'))
-ActiveRecord::Base.establish_connection dbconfig['development']
+ActiveRecord::Base.establish_connection dbconfig['production']
 
 set :sass, {:style => :compact }
 
