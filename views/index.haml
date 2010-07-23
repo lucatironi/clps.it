@@ -1,17 +1,20 @@
-%h3 Collapse Url
-%form.inline{:method => "post", :action => "/collapse"}
-  %p.clearfix
-    .span-10
-      %input.text{:name =>"url[full]", :type => "text", :placeholder => "Paste your url"}
-    .span-5
-      %input.last{:type => "submit", :value => "Collapse It!"}
-%br.clear
 
-- if params[:short]
-  %h3== Your Collapsed URL: <a href="http://localhost:4567/#{params[:short]}">http://localhost:4567/#{params[:short]}</a>
+.collapser
+  %form.inline{:method => "post", :action => "/collapse"}
+    %input{:name =>"url[full]", :type => "text", :placeholder => "Paste your url"}
+    %input.last{:type => "submit", :value => "Collapse It!"}
 
-%h3 All Urls
-%ul
-- @urls.each do |url|
-  %li
-    == #{url.full} - <a href="http://localhost:4567/#{url.short}">http://localhost:4567/#{url.short}</a> (#{url.clicks} Clicks)
+  - if params[:short]
+    - link = link_to "/#{params[:short]}", :full_url
+    %h3== Your Collapsed URL: <a href="#{link}"}">#{link}</a>
+    #d_clip_button Copy!
+
+    :javascript
+      var clip = null;
+      
+      function init() {
+        clip = new ZeroClipboard.Client();
+      
+        clip.setText( "#{link}" );
+        clip.glue( 'd_clip_button' );
+      }

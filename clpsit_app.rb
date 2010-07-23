@@ -36,18 +36,22 @@ get '/' do
 end
 
 post '/collapse' do
-  hash = Digest::MD5.hexdigest(params[:url][:full])
-  @url =  Url.find(:first, :conditions => {:hash => hash})
-  unless @url.nil?
-    redirect "/?short=#{@url.short}"
-  else
-    @url = Url.new(params[:url])
-    @url.hash = hash
-    if @url.save
+  unless params[:url][:full].blank?
+    md5_hash = Digest::MD5.hexdigest(params[:url][:full])
+    @url =  Url.find(:first, :conditions => {:md5_hash => md5_hash})
+    unless @url.nil?
       redirect "/?short=#{@url.short}"
     else
-      "There was a problem saving that..."
+      @url = Url.new(params[:url])
+      @url.hash = hash
+      if @url.save
+        redirect "/?short=#{@url.short}"
+      else
+        "There was a problem saving that..."
+      end
     end
+  else
+    redirect "/"
   end
 end
 

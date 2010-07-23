@@ -3,7 +3,7 @@ class CreateUrls < ActiveRecord::Migration
     create_table :urls do |t|
       t.string :full
       t.string :short
-      t.string :hash
+      t.string :md5_hash
       t.integer :clicks, :default => 0
 
       t.timestamps

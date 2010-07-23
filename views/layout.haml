@@ -10,17 +10,15 @@
       %link{:rel => "stylesheet", :href => "#{link_to "/stylesheets/ie.css"}", :media => "screen, projection"}
     %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
     %script{:src => "#{link_to "/javascripts/application.js"}", :type => "text/javascript"}
-  %body
-    #header_wrap
-      %header.container
-        #logo
-          %h1
-            %a{:href => "#{link_to "/"}"} Clps.it
+    %script{:src => "#{link_to "/javascripts/ZeroClipboard.js"}", :type => "text/javascript"}
+  %body{:onload => "init()"}
+    %header.container
+      %h1
+        %a{:href => "#{link_to "/"}"} Clps.it
     %section#content.container
       = yield
-    #footer_wrap
-      %footer.container
-        %p
-          Proudly developed by
-          %a{:href => "http://lucatironi.net"} Luca Tironi
-          &copy; 2010
+    %footer.container
+      %p
+        Proudly developed by
+        %a{:href => "http://lucatironi.net"} Luca Tironi
+        &copy; 2010
