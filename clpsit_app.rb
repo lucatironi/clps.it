@@ -11,6 +11,16 @@ ActiveRecord::Base.establish_connection dbconfig[ENV['RACK_ENV'].to_s]
 
 set :sass, {:style => :compact }
 
+configure :production do
+  before do
+    TheDomain = 'http://clps.it'
+
+    if request.env['HTTP_HOST'] != TheDomain
+      redirect TheDomain
+    end
+  end
+end
+
 class Url < ActiveRecord::Base
   attr_accessible :full, :short, :md5_hash, :clicks
   before_create :generate_short_url
