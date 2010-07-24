@@ -13,7 +13,7 @@ set :sass, {:style => :compact }
 
 configure :production do
   before do
-    TheDomain = 'http://clps.it'
+    TheDomain = 'clps.it'
 
     if request.env['HTTP_HOST'] != TheDomain
       redirect TheDomain
