@@ -2,9 +2,9 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'yaml'
-require 'helpers/link'
 require 'active_record'
 require 'digest/md5'
+require './helpers/link'
 
 dbconfig = YAML.load(File.read('config/database.yml'))
 ActiveRecord::Base.establish_connection dbconfig[ENV['RACK_ENV'].to_s]
@@ -29,8 +29,7 @@ class Url < ActiveRecord::Base
   URL_BASE = URL_CHARS.size
 
   def generate_short_url
-    o =  [('a'..'z'),('A'..'Z'),('0'..'9'),'-','_'].map{|i| i.to_a}.flatten
-    self.short = (0..4).map{ o[rand(o.length)]  }.join
+    self.short = (0..4).map{ rand(36).to_s(36) }.join
     # Ensure uniqueness of the token..
     generate_short_url unless Url.find(:first, :conditions => {:short => self.short}).nil?
   end

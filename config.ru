@@ -1,11 +1,11 @@
 require 'rubygems'
 require 'sinatra'
 
-require 'clpsit_app.rb'
+require './clpsit_app'
 
 root_dir = File.dirname(__FILE__)
 
-set(:public, File.join(root_dir, '/public'))
+set(:public_folder, File.join(root_dir, '/public'))
 set(:views_directory, File.join(root_dir, '/views'))
 set(:run, false)
 set(:environment, ENV['RACK_ENV'].to_sym)
